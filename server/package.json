@@ -1,0 +1,23 @@
+{
+	"name": "farm-tech-blog-backend",
+	"version": "1.0.0",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "nodemon server.js && echo\"Server Started at PORT 3001\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.3",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"got": "^11.7.0",
+		"mongoose": "^5.10.7",
+		"nodemailer": "^6.4.13"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
+}
