@@ -18,7 +18,7 @@ export default function Form() {
 		})
 			.then(res => {
 				console.log(res);
-				res.status === 404 ? alert('Internal Server Error 501') : alert('Request Recorded 200');
+				res.status === 404 ? alert('Error Code ' + res.statusCode) : alert('Request Recorded' + res.statusCode);
 			})
 			.catch(err => console.log(err));
 	}
