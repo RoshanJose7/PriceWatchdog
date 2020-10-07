@@ -10,12 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('build'));
 app.use(express.json());
-
-app.get('/', (req, res) => {
-	res.sendFile('index.html');
-});
 
 app.post('/api/data', (req, res) => {
 	const URL = req.body.link;

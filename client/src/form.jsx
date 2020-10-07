@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
-export default function Form() {
+export default function MyForm() {
 	const [data, setData] = useState({
 		link: '',
 		lowerBound: '',
@@ -28,25 +29,22 @@ export default function Form() {
 	}
 
 	return (
-		<div>
-			<form onSubmit={e => handleSubmit(e)}>
-				<input
-					name='link'
-					required
-					placeholder='Link to amazon product'
-					onChange={e => handleChange(e)}
-					type='text'
-				/>
-				<input
-					name='lowerBound'
-					required
-					placeholder='Lower Bound Price'
-					onChange={e => handleChange(e)}
-					type='text'
-				/>
-				<input name='email' required placeholder='your email' onChange={e => handleChange(e)} type='text' />
-				<button type='submit'>Submit</button>
-			</form>
-		</div>
+		<Form onSubmit={e => handleSubmit(e)}>
+			<Form.Group name='link' required onChange={e => handleChange(e)} controlId='exampleForm.ControlInput1'>
+				<Form.Label>The Direct Link to the Product</Form.Label>
+				<Form.Control type='text' placeholder='https://amazon.in/<your product>' />
+			</Form.Group>
+			<Form.Group name='link' required onChange={e => handleChange(e)} controlId='exampleForm.ControlInput1'>
+				<Form.Label>The Lowest price which you want to be notifed at...</Form.Label>
+				<Form.Control type='text' placeholder='5000' />
+			</Form.Group>
+			<Form.Group name='link' required onChange={e => handleChange(e)} controlId='exampleForm.ControlInput1'>
+				<Form.Label>Email address</Form.Label>
+				<Form.Control type='email' placeholder='name@example.com' />
+			</Form.Group>
+			<Button variant='danger' type='submit'>
+				Submit
+			</Button>
+		</Form>
 	);
 }

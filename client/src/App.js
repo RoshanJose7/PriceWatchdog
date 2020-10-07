@@ -1,10 +1,12 @@
 import React from 'react';
-import Form from './form';
+import MyForm from './form';
+import NavBar from './NavBar';
 
 function App() {
 	return (
 		<div className='App'>
-			<Form />
+			<NavBar />
+			<MyForm />
 		</div>
 	);
 }
