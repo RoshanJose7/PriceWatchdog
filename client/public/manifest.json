@@ -1,0 +1,16 @@
+{
+  "short_name": "Price Tracker",
+  "name": "React Price Tracker PWA",
+  "icons": [
+    {
+      "src": "./images/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#c82333",
+  "background_color": "#ffffff"
+}
