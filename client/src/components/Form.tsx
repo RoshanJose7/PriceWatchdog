@@ -1,8 +1,10 @@
-import React, { useRef, RefObject } from "react";
+import React, { useState, useRef, RefObject } from "react";
 import axios from "axios";
-import { Form, Button } from "react-bootstrap";
+import { Alert, Form, Button } from "react-bootstrap";
 
 export default function MyForm() {
+  const [alert, setAlert] = useState<string | null>();
+  const [error, setError] = useState<string | null>();
   const linkRef: RefObject<HTMLInputElement> = useRef(null);
   const lowerBoundRef: RefObject<HTMLInputElement> = useRef(null);
   const emailRef: RefObject<HTMLInputElement> = useRef(null);
@@ -25,14 +27,30 @@ export default function MyForm() {
       .then((res) => {
         console.log(res.data);
         res.status === 404
-          ? alert("Error Code " + res.status)
-          : alert("Request Recorded" + res.status);
+          ? setError("Unusual Error Occurred!!!")
+          : setAlert("You will recieve an email when the price drops!!!");
+        setTimeout(() => {
+          setError(null);
+          setAlert(null);
+        }, 5000);
       })
       .catch((err) => console.log(err));
   }
 
   return (
     <Form className="form" onSubmit={(e) => handleSubmit(e)}>
+      {alert && (
+        <Alert className="alert" variant="success">
+          <Alert.Heading>Request Recorded : Status Code 200</Alert.Heading>
+          <p>{alert}</p>
+        </Alert>
+      )}
+      {error && (
+        <Alert className="alert" variant="danger">
+          <Alert.Heading>Error Code : Status Code 404</Alert.Heading>
+          <p>{error}</p>
+        </Alert>
+      )}
       <Form.Group controlId="ProductLinkInput">
         <Form.Label>The Direct Link to the Product</Form.Label>
         <Form.Control

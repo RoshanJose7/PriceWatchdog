@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const URI = "mongodb://localhost:27017/PriceTrackerUsers";
+const URI =
+  "mongodb+srv://dbUser:dbUserPassword@userdata.dmwm7.mongodb.net/dbUser?retryWrites=true&w=majority";
 
 mongoose
   .connect(URI, {

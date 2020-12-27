@@ -6,7 +6,7 @@ import UserData from "./config/dbModels";
 import "./config/db";
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

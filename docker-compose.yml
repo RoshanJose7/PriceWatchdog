@@ -1,0 +1,15 @@
+services:
+  client:
+    container_name: client
+    restart: always
+    build: ./client
+    ports:
+      - "5000:5000"
+    depends_on:
+      - server
+  server:
+    container_name: server
+    restart: always
+    build: ./server
+    ports:
+      - "8000:8000"
