@@ -1,3 +1,2 @@
-# A Simple Price Tracker App made using MERN Stack
-
-### Uses SMTP service provided by GMail and sends an email with the link to the product when the price drops down.
+# PriceWatchdog
+Introducing PriceWatchdog: Your MERN Stack Price Tracker! Set price drop limits and product links, and let the server monitor prices. Receive email notifications when prices drop. Never miss a deal with PriceTrackr! 💰📈 #PriceTracker #MERNStack #DealNotifier
